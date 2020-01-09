@@ -1,18 +1,22 @@
 package bemobile.splanes.com.gnbapp.app
 
-import android.app.Activity
 import android.app.Application
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
+import bemobile.splanes.com.gnbapp.app.dagger.AppComponent
+import bemobile.splanes.com.gnbapp.app.dagger.AppModule
+import bemobile.splanes.com.gnbapp.app.dagger.DaggerAppComponent
 
-class GNBApplication : Application(), HasActivityInjector {
+class GNBApplication : Application() {
 
-    @Inject
-    lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+    val component: AppComponent by lazy {
+        DaggerAppComponent.builder().appModule(
+            AppModule(
+                this
+            )
+        ).build()
+    }
 
-    override fun activityInjector(): AndroidInjector<Activity> {
-        return activityInjector
+    override fun onCreate() {
+        super.onCreate()
+        component.inject(this)
     }
 }
