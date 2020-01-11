@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<bemobile.splanes.com.gnbapp.commons.ui.component.AppLoader
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:id="@+id/appLoader"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:visibility="gone">
 
-    <bemobile.splanes.com.gnbapp.commons.ui.component.AppLoader
-        android:id="@+id/appLoader"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-</LinearLayout>
+</bemobile.splanes.com.gnbapp.commons.ui.component.AppLoader>

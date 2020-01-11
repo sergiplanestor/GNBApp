@@ -1,4 +1,4 @@
-package bemobile.splanes.com.gnbapp.commons
+package bemobile.splanes.com.gnbapp.commons.rest
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -8,11 +8,7 @@ import bemobile.splanes.com.gnbapp.app.dagger.DaggerAppComponent
 class GNBApplication : Application() {
 
     val component: AppComponent by lazy {
-        DaggerAppComponent.builder().appModule(
-            AppModule(
-                this
-            )
-        ).build()
+        DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
 
     override fun onCreate() {

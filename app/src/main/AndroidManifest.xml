@@ -21,7 +21,7 @@
              File is already created.
         -->
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".feature.ui.MainActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW"/>

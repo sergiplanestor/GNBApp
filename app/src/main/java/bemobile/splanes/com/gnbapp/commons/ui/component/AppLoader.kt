@@ -42,6 +42,7 @@ class AppLoader @JvmOverloads constructor(context: Context,
     }
 
     fun showLoader() {
+        this.visibility = View.VISIBLE
         mAnimationView.visibility = View.VISIBLE
         mAnimationView.playAnimation()
     }
@@ -52,6 +53,7 @@ class AppLoader @JvmOverloads constructor(context: Context,
 
     fun hideLoader(force: Boolean) {
         if (force) {
+            this.visibility = View.GONE
             mAnimationView.visibility = View.GONE
             mAnimationView.cancelAnimation()
         } else {
