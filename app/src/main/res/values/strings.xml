@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">GNBApp</string>
 
-    <string name="popup_error_title">Service error</string>
-    <string name="popup_error_body">Error code %s. </string>
+    <string name="popup_error_title">Oops..</string>
+    <string name="popup_error_body">Seems that something went wrong.\nPlease try it again.</string>
+
     <string name="change_currency_dialog_title">Pick one currency</string>
     <string name="accept">Accept</string>
     <string name="cancel">Cancel</string>
@@ -14,5 +15,9 @@
     <string name="transaction_total_made">Transactions made: %d</string>
     <string name="transaction_total_sum">Total: %.2f</string>
     <string name="transaction_average">Average: %.2f</string>
+
+    <string name="empty_state_title_product">No data found</string>
+    <string name="empty_state_subtitle_product">Seems that there is no products.</string>
+    <string name="empty_state_button_product">Reload</string>
 
 </resources>

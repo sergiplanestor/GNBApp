@@ -5,4 +5,10 @@
         <attr name="productName" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="EmptyStateView">
+        <attr name="emptyStateTitle" format="reference"/>
+        <attr name="emptyStateSubtitle" format="reference"/>
+        <attr name="emptyStateButtonText" format="reference"/>
+    </declare-styleable>
+
 </resources>

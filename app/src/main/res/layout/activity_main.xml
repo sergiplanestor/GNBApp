@@ -52,6 +52,19 @@
         android:layout_marginEnd="@dimen/dim_20dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
+    <bemobile.splanes.com.gnbapp.commons.ui.component.EmptyStateView
+        android:id="@+id/emptyStateView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_20dp"
+        android:layout_marginStart="@dimen/dim_20dp"
+        android:layout_marginEnd="@dimen/dim_20dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:emptyStateTitle="@string/empty_state_title_product"
+        app:emptyStateSubtitle="@string/empty_state_subtitle_product"
+        app:emptyStateButtonText="@string/empty_state_button_product"
+        android:visibility="gone"/>
+
     <include layout="@layout/include_loader"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
