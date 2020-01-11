@@ -36,6 +36,10 @@
         <item name="android:textSize">19sp</item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:textAppearance">@style/Text.Title</item>
+    </style>
+
     <style name="CollapsingToolbarLayoutExpandedTextStyle" parent="AppTheme">
         <item name="android:textColor">@android:color/transparent</item>
         <item name="android:textSize">0sp</item>

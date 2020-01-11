@@ -3,5 +3,16 @@
 
     <string name="popup_error_title">Service error</string>
     <string name="popup_error_body">Error code %s. </string>
+    <string name="change_currency_dialog_title">Pick one currency</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="brand">Goliath National Bank</string>
+    <string name="product_name_hint">Product:</string>
+    <string name="transaction_detail">%s transactions</string>
+
+    <string name="transaction_total_made">Transactions made: %d</string>
+    <string name="transaction_total_sum">Total: %.2f</string>
+    <string name="transaction_average">Average: %.2f</string>
 
 </resources>

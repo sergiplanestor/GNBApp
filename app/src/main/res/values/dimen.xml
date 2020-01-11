@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="toolbar_height">160dp</dimen>
+
+    <dimen name="dim_1dp">1dp</dimen>
     <dimen name="dim_2dp">2dp</dimen>
+    <dimen name="dim_6dp">6dp</dimen>
     <dimen name="dim_12dp">12dp</dimen>
     <dimen name="dim_20dp">20dp</dimen>
     <dimen name="dim_60dp">60dp</dimen>
+    <dimen name="dim_200dp">200dp</dimen>
 </resources>
