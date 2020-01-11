@@ -40,22 +40,25 @@ object TransactionManager {
         val transactions = transactionsMap?.get(product) ?: return null
 
         for (transaction : TransactionItem in transactions) {
+            val transactionClone = TransactionItem(
+                transaction.sku,
+                transaction.amount,
+                currencyType
+            )
             if (transaction.currency != currencyType) {
-
                 val ratesFound = getRecursiveConversion(transaction.currency, currencyType)
                 for (rate : RateItem in ratesFound) {
-                    transaction.amount = MathUtils.multiply(transaction.amount, rate.rate)
+                    transactionClone.amount = MathUtils.multiply(transactionClone.amount, rate.rate)
                 }
-                transaction.currency = currencyType
-                result.add(transaction)
+                result.add(transactionClone)
 
             } else {
-                transaction.amount = MathUtils.round(transaction.amount)
-                result.add(transaction)
+                transactionClone.amount = MathUtils.round(transactionClone.amount)
+                result.add(transactionClone)
             }
         }
 
-        return transactionsMap?.get(product)
+        return result
     }
 
     private fun getDirectConversion(fromCurrencyType: CurrencyType, toCurrencyType: CurrencyType) : RateItem? {
