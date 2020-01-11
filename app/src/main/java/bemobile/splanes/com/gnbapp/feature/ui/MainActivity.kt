@@ -1,6 +1,7 @@
 package bemobile.splanes.com.gnbapp.feature.ui
 
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,9 +19,9 @@ class MainActivity : BaseActivity<TransactionViewModel>(), OnProductClickListene
 
     lateinit var adapter: ProductAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+// =================================================================================================
+// Init views
+// =================================================================================================
 
     override fun initViews() {
         super.initViews()
@@ -35,12 +36,22 @@ class MainActivity : BaseActivity<TransactionViewModel>(), OnProductClickListene
         transactionRecyclerView.adapter = adapter
     }
 
+// =================================================================================================
+// Load data & update views
+// =================================================================================================
+
     override fun loadData() {
         super.loadData()
-        mViewModel.getProducts().observe(this, Observer<List<ProductItem>> { products ->
+        mViewModel.getProducts().observe(this, Observer { products ->
             runOnUiThread {
-                adapter.updateData(products = products)
                 hideLoader()
+                if (products == null) {
+                    showEmptyState()
+                    showErrorPopUp()
+                } else {
+                    hideEmptyState()
+                    adapter.updateData(products = products)
+                }
             }
         })
     }
@@ -50,11 +61,30 @@ class MainActivity : BaseActivity<TransactionViewModel>(), OnProductClickListene
         loadData()
     }
 
+    private fun showEmptyState() {
+        emptyStateView.visibility = View.VISIBLE
+        emptyStateView.setButtonClickListener(View.OnClickListener {
+            loadData()
+        })
+    }
+
+    private fun hideEmptyState() {
+        emptyStateView.visibility = View.GONE
+    }
+
+// =================================================================================================
+// OnProductClickListener Implementation
+// =================================================================================================
+
     override fun onProductClick(product: ProductItem) {
         launchActivity(TransactionActivity::class.java, Bundle().apply {
             putParcelable(TransactionActivity.EXTRA_PRODUCT, product)
         })
     }
+
+// =================================================================================================
+// Parent's abstract methods implementation
+// =================================================================================================
 
     override fun getLayoutResource(): Int {
         return R.layout.activity_main
