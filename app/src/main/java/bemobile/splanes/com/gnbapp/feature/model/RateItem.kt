@@ -3,7 +3,11 @@ package bemobile.splanes.com.gnbapp.feature.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Rate(var from: CurrencyType, var to: CurrencyType, var rate: String) : Parcelable {
+data class RateItem(var from: CurrencyType, var to: CurrencyType, var rate: String) : Parcelable {
+
+    constructor(rate: Rate) : this(
+        rate.from, rate.to, rate.rate
+    )
 
     constructor(parcel: Parcel) : this(
         CurrencyType.valueOf(parcel.readString()!!),
