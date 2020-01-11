@@ -5,8 +5,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import bemobile.splanes.com.gnbapp.R
 import bemobile.splanes.com.gnbapp.commons.rest.RestCallback
 import bemobile.splanes.com.gnbapp.commons.ui.component.AppLoader
+import bemobile.splanes.com.gnbapp.commons.ui.dialog.PopUp
+import bemobile.splanes.com.gnbapp.commons.ui.dialog.PopUpModel
 import kotlinx.android.synthetic.main.include_loader.*
 import javax.inject.Inject
 
@@ -55,18 +58,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
 // =================================================================================================
 // ViewModel and Binding views
 // =================================================================================================
@@ -86,6 +77,14 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
     open fun loadData() {
         showLoader()
         // Nothing to do here. Override it on child in order to launch first time services
+    }
+
+    open fun showErrorPopUp() {
+        PopUp(this, PopUpModel(
+            title = getString(R.string.popup_error_title),
+            body = getString(R.string.popup_error_body),
+            positiveButton = getString(R.string.accept)
+        )).show()
     }
 
 // =================================================================================================
