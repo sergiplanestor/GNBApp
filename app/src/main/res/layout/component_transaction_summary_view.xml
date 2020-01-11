@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dim_12dp"
@@ -9,38 +9,44 @@
     android:padding="@dimen/dim_12dp"
     android:background="@drawable/rect_round_bkg">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/dim_12dp">
+
+        <TextView
+            android:id="@+id/totalTextView"
+            style="@style/Text.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/averageTextView"
+            style="@style/Text.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/currentCurrencyTextView"
+            style="@style/Text.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/numOfTransactionsTextView"
-        style="@style/Text.Body"
-        android:layout_width="0dp"
+        style="@style/Text.Small"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
         android:ellipsize="end"/>
-
-    <TextView
-        android:id="@+id/totalTextView"
-        style="@style/Text.Body"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:ellipsize="end" />
-
-    <TextView
-        android:id="@+id/averageTextView"
-        style="@style/Text.Body"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:ellipsize="end" />
-
-    <TextView
-        android:id="@+id/currentCurrencyTextView"
-        style="@style/Text.Body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end" />
-
 </LinearLayout>
