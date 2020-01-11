@@ -1,5 +1,6 @@
 package bemobile.splanes.com.gnbapp.commons.ui.base
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -25,7 +26,8 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     protected lateinit var mViewModel : VM
-    private var firstLoadData = true
+
+    private var isFirstOnResume = true
 
 // =================================================================================================
 // Lifecycle
@@ -34,6 +36,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injectDaggerComponent()
+        setContentView(getLayoutResource())
         initViewModel()
     }
 
@@ -44,11 +47,11 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
 
     override fun onResume() {
         super.onResume()
-        if (firstLoadData) {
+        if (isFirstOnResume) {
             loadData()
-            firstLoadData = false;
+            isFirstOnResume = false
         } else {
-            reloadData()
+            updateViews()
         }
     }
 
@@ -69,7 +72,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
 // =================================================================================================
 
     private fun initViewModel() {
-        mViewModel = ViewModelProviders.of(this, viewModelFactory)[getViewModel()]
+        mViewModel = ViewModelProviders.of(this, viewModelFactory)[getViewModelClass()]
     }
 
     open fun initViews() {
@@ -82,14 +85,28 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
 
     open fun loadData() {
         showLoader()
-
         // Nothing to do here. Override it on child in order to launch first time services
     }
 
-    open fun reloadData() {
-        showLoader()
+// =================================================================================================
+// Update views
+// =================================================================================================
 
-        // Nothing to do here. Override it on child in order to launch second & more times services
+    open fun updateViews() {
+        // Nothing to do here
+    }
+
+// =================================================================================================
+// Launch activity
+// =================================================================================================
+
+    fun <T> launchActivity(clazz: Class<T>, bundle: Bundle? = null) {
+        val intent = Intent(this, clazz)
+        if (bundle != null) {
+            intent.putExtras(bundle)
+        }
+        overridePendingTransition(0, 0) // TODO !!!
+        startActivity(intent)
     }
 
 // =================================================================================================
@@ -120,9 +137,9 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), RestCallb
 // Abstract methods
 // =================================================================================================
 
-    abstract fun getViewModel() : Class<VM>
+    abstract fun getLayoutResource() : Int
 
-    //abstract fun getViewModelFactory() : ViewModelProvider.Factory
+    abstract fun getViewModelClass() : Class<VM>
 
     abstract fun injectDaggerComponent()
 }
