@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dim_12dp"
+    android:gravity="center_vertical"
+    android:padding="@dimen/dim_12dp"
+    android:background="@drawable/rect_round_bkg">
+
+    <TextView
+        android:id="@+id/numOfTransactionsTextView"
+        style="@style/Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/totalTextView"
+        style="@style/Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/averageTextView"
+        style="@style/Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/currentCurrencyTextView"
+        style="@style/Text.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end" />
+
+</LinearLayout>
