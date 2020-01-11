@@ -21,6 +21,7 @@
             app:toolbarId="@+id/toolbar"
             app:contentScrim="?attr/colorPrimaryDark"
             app:expandedTitleGravity="top"
+            app:collapsedTitleTextAppearance="@style/Text.Title"
             app:expandedTitleTextAppearance="@style/CollapsingToolbarLayoutExpandedTextStyle"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
@@ -35,6 +36,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ToolbarTheme"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
