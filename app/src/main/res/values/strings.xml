@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GNBApp</string>
+
+    <string name="popup_error_title">Service error</string>
+    <string name="popup_error_body">Error code %s. </string>
+
 </resources>
