@@ -6,6 +6,9 @@ import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
 
+/**
+ * ViewModel Factory to can inject objects using Dagger in ViewModels
+ */
 @Singleton
 class ViewModelFactory
     @Inject

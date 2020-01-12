@@ -8,6 +8,9 @@ import android.widget.LinearLayout
 import bemobile.splanes.com.gnbapp.R
 import com.airbnb.lottie.LottieAnimationView
 
+/**
+ * Loader component
+ */
 class AppLoader @JvmOverloads constructor(context: Context,
                                           attrs: AttributeSet? = null,
                                           defStyle: Int = 0,
@@ -41,16 +44,26 @@ class AppLoader @JvmOverloads constructor(context: Context,
         mAnimationView = findViewById(R.id.lottie_animation_view)
     }
 
+    /**
+     * Shows loader and start animation
+     */
     fun showLoader() {
         this.visibility = View.VISIBLE
         mAnimationView.visibility = View.VISIBLE
         mAnimationView.playAnimation()
     }
 
+    /**
+     * Hides loader when animation ends.
+     */
     fun hideLoader() {
         hideLoader(false)
     }
 
+    /**
+     * Hides loader. If loader should be hidden immediately param should be true, in that case, will
+     * not wait to finish its animation to be hidden.
+     */
     fun hideLoader(force: Boolean) {
         if (force) {
             this.visibility = View.GONE

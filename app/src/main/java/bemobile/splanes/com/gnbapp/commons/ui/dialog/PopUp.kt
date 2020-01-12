@@ -7,11 +7,10 @@ import android.view.View
 import bemobile.splanes.com.gnbapp.R
 import kotlinx.android.synthetic.main.popup_view.*
 
+/**
+ * Common App dialog.
+ */
 class PopUp(context: Context, private val model: PopUpModel) : Dialog(context) {
-
-    companion object {
-        const val TAG = "PopUp"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

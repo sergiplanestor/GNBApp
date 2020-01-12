@@ -7,6 +7,9 @@ import android.widget.LinearLayout
 import bemobile.splanes.com.gnbapp.R
 import kotlinx.android.synthetic.main.component_transaction_view.view.*
 
+/**
+ * Component used to display transactions.
+ */
 class TransactionView @JvmOverloads constructor(context: Context,
                                                 attrs: AttributeSet? = null,
                                                 defStyle: Int = 0,

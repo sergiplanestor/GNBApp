@@ -5,14 +5,23 @@ import androidx.lifecycle.MutableLiveData
 import bemobile.splanes.com.gnbapp.commons.ui.base.BaseViewModel
 import bemobile.splanes.com.gnbapp.feature.TransactionManager
 import bemobile.splanes.com.gnbapp.feature.model.*
-import bemobile.splanes.com.gnbapp.feature.service.GNBService
+import bemobile.splanes.com.gnbapp.feature.service.TransactionService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class TransactionViewModel constructor(private val mService: GNBService) : BaseViewModel() {
+/**
+ * Transaction ViewModel.
+ * This class will provide all {@link LiveData} needed to deal with Products and Transactions.
+ */
+class TransactionViewModel constructor(private val mService: TransactionService) : BaseViewModel() {
 
-
+    /**
+     * Gets transactions of given ProductItem and converted to the specified CurrencyType.
+     * @param productItem {@link ProductItem} from which get transactions.
+     * @param currencyType {@link CurrencyType} to which want to convert all transactions.
+     * @return {@link LiveData} containing List of requested transaction items. See {@link TransactionItem}
+     */
     fun getTransactions(productItem: ProductItem, currencyType: CurrencyType) : LiveData<List<TransactionItem>> {
 
         val liveData = MutableLiveData<List<TransactionItem>>()
@@ -24,6 +33,11 @@ class TransactionViewModel constructor(private val mService: GNBService) : BaseV
         return liveData
     }
 
+    /**
+     * Gets all products. This method will call service to get all transactions and rates.
+     * @return {@link LiveData} containing List of product items, see {@see ProductItem}. In case
+     * of service error, data posted will be null.
+     */
     fun getProducts() : LiveData<List<ProductItem>?> {
 
         val liveData = MutableLiveData<List<ProductItem>>()
@@ -59,6 +73,9 @@ class TransactionViewModel constructor(private val mService: GNBService) : BaseV
         return liveData
     }
 
+    /**
+     * Gets all rates. Data received will be stored in {@link TransactionManager}.
+     */
     private fun getRates() {
 
         if (TransactionManager.getRates() == null) {

@@ -7,6 +7,9 @@ import android.widget.LinearLayout
 import bemobile.splanes.com.gnbapp.R
 import kotlinx.android.synthetic.main.component_empty_state.view.*
 
+/**
+ * Empty state component.
+ */
 class EmptyStateView @JvmOverloads constructor(context: Context,
                                                attrs: AttributeSet? = null,
                                                defStyle: Int = 0,
@@ -35,18 +38,42 @@ class EmptyStateView @JvmOverloads constructor(context: Context,
         typedArray.recycle()
     }
 
+    /**
+     * Sets empty state title
+     */
     fun setTitle(title: String) {
         emptyStateTitleTextView.text = title
     }
 
+    /**
+     * Sets empty state subtitle
+     */
     fun setSubtitle(subtitle: String) {
         emptyStateSubtitleTextView.text = subtitle
     }
 
-    fun setButtonText(buttonText: String) {
-        emptyStateButton.text = buttonText
+    /**
+     * Sets empty state button text. If param is null, button will hide.
+     */
+    fun setButtonText(buttonText: String?) {
+        if (buttonText == null) {
+            setButtonVisibility(GONE)
+        } else {
+            emptyStateButton.text = buttonText
+            setButtonVisibility(VISIBLE)
+        }
     }
 
+    /**
+     * Sets empty state visibility
+     */
+    fun setButtonVisibility(visibility: Int) {
+        emptyStateButton.visibility = visibility
+    }
+
+    /**
+     * Sets empty state button click listener
+     */
     fun setButtonClickListener(listener: OnClickListener) {
         emptyStateButton.setOnClickListener(listener)
     }

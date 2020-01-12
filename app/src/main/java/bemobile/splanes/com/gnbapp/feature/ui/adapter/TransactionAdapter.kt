@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import bemobile.splanes.com.gnbapp.commons.ui.component.TransactionView
 import bemobile.splanes.com.gnbapp.feature.model.TransactionItem
 
+/**
+ * Transactions adapter.
+ */
 class TransactionAdapter(private val context: Context,
                          private var transactions: List<TransactionItem>,
                          private val listener: OnTransactionClickListener? = null) : RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
@@ -31,6 +34,9 @@ class TransactionAdapter(private val context: Context,
         view.setSku(data.sku)
         view.setAmount(data.amount)
         view.setCurrency(data.currency.value)
+        view.setCardClickListener(View.OnClickListener {
+            listener?.onTransactionClick(data)
+        })
     }
 
     fun updateData(transactions: List<TransactionItem>) {

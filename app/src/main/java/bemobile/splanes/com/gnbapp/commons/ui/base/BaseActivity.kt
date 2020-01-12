@@ -12,6 +12,10 @@ import bemobile.splanes.com.gnbapp.commons.ui.dialog.PopUpModel
 import kotlinx.android.synthetic.main.include_loader.*
 import javax.inject.Inject
 
+/**
+ * Base abstract activity that performs commons logic,
+ * provides util methods and sets base behavior for all activities that extends it.
+ */
 abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
 
 // =================================================================================================
@@ -103,7 +107,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
         if (bundle != null) {
             intent.putExtras(bundle)
         }
-        overridePendingTransition(0, 0) // TODO !!!
         startActivity(intent)
     }
 

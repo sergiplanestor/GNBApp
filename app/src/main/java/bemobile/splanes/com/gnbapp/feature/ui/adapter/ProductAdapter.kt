@@ -8,6 +8,9 @@ import bemobile.splanes.com.gnbapp.commons.ui.component.ProductView
 import bemobile.splanes.com.gnbapp.commons.ui.component.TransactionView
 import bemobile.splanes.com.gnbapp.feature.model.ProductItem
 
+/**
+ * Product's adapter
+ */
 class ProductAdapter(private val context : Context,
                      private var products: List<ProductItem>,
                      private val listener: OnProductClickListener?) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {

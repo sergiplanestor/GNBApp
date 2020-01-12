@@ -5,6 +5,9 @@ import bemobile.splanes.com.gnbapp.app.dagger.AppComponent
 import bemobile.splanes.com.gnbapp.app.dagger.AppModule
 import bemobile.splanes.com.gnbapp.app.dagger.DaggerAppComponent
 
+/**
+ * Application
+ */
 class GNBApplication : Application() {
 
     val component: AppComponent by lazy {
