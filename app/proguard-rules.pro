@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Need to keep model without obfuscation in order to can parse from service
+-keepclassmembers class bemobile.splanes.com.gnbapp.feature.transaction.model.* {*;}
