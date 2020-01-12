@@ -1,4 +1,4 @@
-package bemobile.splanes.com.gnbapp.feature.model
+package bemobile.splanes.com.gnbapp.feature.transaction.model
 
 import android.os.Parcel
 import android.os.Parcelable

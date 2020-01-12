@@ -1,8 +1,8 @@
-package bemobile.splanes.com.gnbapp.feature.service
+package bemobile.splanes.com.gnbapp.feature.transaction.service
 
-import bemobile.splanes.com.gnbapp.feature.datasource.TransactionDataSource
-import bemobile.splanes.com.gnbapp.feature.model.Rate
-import bemobile.splanes.com.gnbapp.feature.model.Transaction
+import bemobile.splanes.com.gnbapp.feature.transaction.datasource.TransactionDataSource
+import bemobile.splanes.com.gnbapp.feature.transaction.model.Rate
+import bemobile.splanes.com.gnbapp.feature.transaction.model.Transaction
 import retrofit2.Callback
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package bemobile.splanes.com.gnbapp.feature.ui
+package bemobile.splanes.com.gnbapp.feature.transaction.ui.view
 
 import android.os.Bundle
 import android.view.View
@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import bemobile.splanes.com.gnbapp.R
 import bemobile.splanes.com.gnbapp.commons.extension.app
 import bemobile.splanes.com.gnbapp.commons.ui.base.BaseActivity
-import bemobile.splanes.com.gnbapp.feature.dagger.TransactionModule
-import bemobile.splanes.com.gnbapp.feature.model.ProductItem
-import bemobile.splanes.com.gnbapp.feature.ui.adapter.OnProductClickListener
-import bemobile.splanes.com.gnbapp.feature.ui.adapter.ProductAdapter
-import bemobile.splanes.com.gnbapp.feature.viewmodel.TransactionViewModel
+import bemobile.splanes.com.gnbapp.feature.transaction.dagger.TransactionModule
+import bemobile.splanes.com.gnbapp.feature.transaction.model.ProductItem
+import bemobile.splanes.com.gnbapp.feature.transaction.ui.adapter.OnProductClickListener
+import bemobile.splanes.com.gnbapp.feature.transaction.ui.adapter.ProductAdapter
+import bemobile.splanes.com.gnbapp.feature.transaction.ui.viewmodel.TransactionViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<TransactionViewModel>(), OnProductClickListener {

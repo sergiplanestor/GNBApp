@@ -1,7 +1,7 @@
-package bemobile.splanes.com.gnbapp.feature
+package bemobile.splanes.com.gnbapp.feature.transaction.manager
 
 import bemobile.splanes.com.gnbapp.commons.util.MathUtils
-import bemobile.splanes.com.gnbapp.feature.model.*
+import bemobile.splanes.com.gnbapp.feature.transaction.model.*
 
 /**
  * Object manager that provides static methods to deal with transactions. Also is used as repository
@@ -64,7 +64,11 @@ object TransactionManager {
                 currencyType
             )
             if (transaction.currency != currencyType) {
-                val ratesFound = getRecursiveConversion(transaction.currency, currencyType)
+                val ratesFound =
+                    getRecursiveConversion(
+                        transaction.currency,
+                        currencyType
+                    )
                 for (rate : RateItem in ratesFound) {
                     transactionClone.amount = MathUtils.multiply(transactionClone.amount, rate.rate)
                 }
@@ -108,13 +112,22 @@ object TransactionManager {
 
         val list = listOf<RateItem>().toMutableList()
         // Checks if exists direct conversion
-        val directRate = getDirectConversion(fromCurrencyType, toCurrencyType)
+        val directRate =
+            getDirectConversion(
+                fromCurrencyType,
+                toCurrencyType
+            )
         // In case of not exist direct conversion
         if (directRate == null) {
             for (rate: RateItem in rates!!) {
                 if (rate.from == fromCurrencyType && rate.to != toCurrencyType) {
                     list.add(rate)
-                    list.addAll(getRecursiveConversion(rate.to, toCurrencyType))
+                    list.addAll(
+                        getRecursiveConversion(
+                            rate.to,
+                            toCurrencyType
+                        )
+                    )
                     break
                 }
             }
@@ -135,6 +148,6 @@ object TransactionManager {
      * Set all rates
      */
     fun setRates(rates: List<RateItem>) {
-        this.rates = rates
+        TransactionManager.rates = rates
     }
 }

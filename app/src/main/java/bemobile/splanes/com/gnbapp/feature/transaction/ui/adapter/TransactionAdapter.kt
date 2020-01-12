@@ -1,4 +1,4 @@
-package bemobile.splanes.com.gnbapp.feature.ui.adapter
+package bemobile.splanes.com.gnbapp.feature.transaction.ui.adapter
 
 import android.content.Context
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import bemobile.splanes.com.gnbapp.commons.ui.component.TransactionView
-import bemobile.splanes.com.gnbapp.feature.model.TransactionItem
+import bemobile.splanes.com.gnbapp.feature.transaction.model.TransactionItem
 
 /**
  * Transactions adapter.

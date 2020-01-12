@@ -1,17 +1,11 @@
-package bemobile.splanes.com.gnbapp.feature.model
+package bemobile.splanes.com.gnbapp.feature.transaction.model
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class TransactionItem(var sku: String,
-                           var amount: String,
-                           var currency: CurrencyType) : Parcelable {
-
-    constructor(transaction: Transaction) : this(
-        transaction.sku,
-        transaction.amount,
-        transaction.currency
-    )
+data class Transaction(var sku: String,
+                       var amount: String,
+                       var currency: CurrencyType) : Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,

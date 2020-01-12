@@ -1,9 +1,8 @@
-package bemobile.splanes.com.gnbapp.feature.ui
+package bemobile.splanes.com.gnbapp.feature.transaction.ui.view
 
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Parcel
-import android.os.Parcelable
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -12,13 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import bemobile.splanes.com.gnbapp.R
 import bemobile.splanes.com.gnbapp.commons.extension.app
 import bemobile.splanes.com.gnbapp.commons.ui.base.BaseActivity
-import bemobile.splanes.com.gnbapp.feature.dagger.TransactionModule
-import bemobile.splanes.com.gnbapp.feature.model.CurrencyType
-import bemobile.splanes.com.gnbapp.feature.model.ProductItem
-import bemobile.splanes.com.gnbapp.feature.model.TransactionItem
-import bemobile.splanes.com.gnbapp.feature.ui.adapter.OnTransactionClickListener
-import bemobile.splanes.com.gnbapp.feature.ui.adapter.TransactionAdapter
-import bemobile.splanes.com.gnbapp.feature.viewmodel.TransactionViewModel
+import bemobile.splanes.com.gnbapp.feature.transaction.dagger.TransactionModule
+import bemobile.splanes.com.gnbapp.feature.transaction.model.CurrencyType
+import bemobile.splanes.com.gnbapp.feature.transaction.model.ProductItem
+import bemobile.splanes.com.gnbapp.feature.transaction.model.TransactionItem
+import bemobile.splanes.com.gnbapp.feature.transaction.ui.adapter.TransactionAdapter
+import bemobile.splanes.com.gnbapp.feature.transaction.ui.viewmodel.TransactionViewModel
 import kotlinx.android.synthetic.main.activity_transaction.*
 
 class TransactionActivity() : BaseActivity<TransactionViewModel>(), View.OnClickListener,

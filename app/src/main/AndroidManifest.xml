@@ -19,7 +19,7 @@
                 android:networkSecurityConfig="@xml/network_security_config"
              File is already created.
         -->
-        <activity android:name=".feature.ui.MainActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="bemobile.splanes.com.gnbapp.feature.transaction.ui.view.MainActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW"/>
@@ -28,7 +28,7 @@
         </activity>
 
         <activity
-            android:name=".feature.ui.TransactionActivity"
+            android:name="bemobile.splanes.com.gnbapp.feature.transaction.ui.view.TransactionActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>

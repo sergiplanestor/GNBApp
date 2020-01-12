@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
 import bemobile.splanes.com.gnbapp.R
-import bemobile.splanes.com.gnbapp.feature.model.TransactionItem
+import bemobile.splanes.com.gnbapp.feature.transaction.model.TransactionItem
 import kotlinx.android.synthetic.main.component_transaction_summary_view.view.*
 
 /**

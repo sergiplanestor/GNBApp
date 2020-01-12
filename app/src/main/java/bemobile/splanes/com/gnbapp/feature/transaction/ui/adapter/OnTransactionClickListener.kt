@@ -1,6 +1,6 @@
-package bemobile.splanes.com.gnbapp.feature.ui.adapter
+package bemobile.splanes.com.gnbapp.feature.transaction.ui.adapter
 
-import bemobile.splanes.com.gnbapp.feature.model.TransactionItem
+import bemobile.splanes.com.gnbapp.feature.transaction.model.TransactionItem
 
 /**
  * Interface to handle when user clicks on transaction

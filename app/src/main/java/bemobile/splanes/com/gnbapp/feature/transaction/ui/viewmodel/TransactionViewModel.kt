@@ -1,11 +1,11 @@
-package bemobile.splanes.com.gnbapp.feature.viewmodel
+package bemobile.splanes.com.gnbapp.feature.transaction.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import bemobile.splanes.com.gnbapp.commons.ui.base.BaseViewModel
-import bemobile.splanes.com.gnbapp.feature.TransactionManager
-import bemobile.splanes.com.gnbapp.feature.model.*
-import bemobile.splanes.com.gnbapp.feature.service.TransactionService
+import bemobile.splanes.com.gnbapp.feature.transaction.manager.TransactionManager
+import bemobile.splanes.com.gnbapp.feature.transaction.model.*
+import bemobile.splanes.com.gnbapp.feature.transaction.service.TransactionService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

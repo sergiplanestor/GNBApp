@@ -1,4 +1,4 @@
-package bemobile.splanes.com.gnbapp.feature.model
+package bemobile.splanes.com.gnbapp.feature.transaction.model
 
 enum class CurrencyType(val value: String) {
     EUR("EUR"),
