@@ -34,10 +34,6 @@ class TransactionActivity() : BaseActivity<TransactionViewModel>(), View.OnClick
 
     private var currentCurrency: CurrencyType = CurrencyType.EUR
 
-    constructor(parcel: Parcel) : this() {
-        product = parcel.readParcelable(ProductItem::class.java.classLoader)!!
-    }
-
 // =================================================================================================
 // Setup views
 // =================================================================================================
