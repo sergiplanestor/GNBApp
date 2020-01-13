@@ -22,6 +22,8 @@ This app has been developed in Kotlin language.
 
 It uses MVVM pattern and has been designed to be modular and scalable, being able to add new features or remove existing without need to change code or break any dependency created
 
-App layers and dependencies are:
+App layers are:
 
-UI layer -> ViewModel layer -> Service layer -> DataSource layer
+* **Presentation layer:**  UI, ViewModel
+* **Domain layer:** Service
+* **Data layer:** DataSource
